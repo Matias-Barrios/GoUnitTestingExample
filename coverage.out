@@ -1,0 +1,4 @@
+mode: set
+github.com/Matias-Barrios/GoUnitTestingExample/handlers/handler.go:14.50,19.2 4 1
+github.com/Matias-Barrios/GoUnitTestingExample/handlers/health.go:5.53,7.2 1 1
+github.com/Matias-Barrios/GoUnitTestingExample/handlers/user.go:8.55,11.2 2 1
