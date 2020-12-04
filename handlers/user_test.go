@@ -15,9 +15,14 @@ type _userProviderMock struct {
 	mock.Mock
 }
 
-func (m *_userProviderMock) GetUsers() []models.User {
+func (m *_userProviderMock) GetUsers() ([]models.User, error) {
 	args := m.Called()
-	return args.Get(0).([]models.User)
+	return args.Get(0).([]models.User), args.Error(1)
+}
+
+func (m *_userProviderMock) CreateUser(u models.User) error {
+	args := m.Called()
+	return args.Get(0).(error)
 }
 
 func TestGetUsersOk(t *testing.T) {
@@ -28,7 +33,7 @@ func TestGetUsersOk(t *testing.T) {
 			Name: "test",
 			Age:  22,
 		},
-	})
+	}, nil)
 
 	_userprovider = _userProviderMock
 

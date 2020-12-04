@@ -10,7 +10,18 @@ import (
 
 var _routerprovider handlers.IHandlerProvider = handlers.HandlerProvider{}
 
+type Entity struct {
+	x int
+	y int
+}
+
+type Circle struct {
+	Entity
+	radius int
+}
+
 func main() {
+
 	r := _routerprovider.GetRouter()
 	srv := &http.Server{
 		Handler:      r,
